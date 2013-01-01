@@ -1,4 +1,4 @@
-package gokudemo
+package custom_viewengine
 
 import (
     "github.com/QLeelulu/goku"
@@ -24,4 +24,12 @@ func init() {
     // set the RootDir as current dir.
     _, filename, _, _ := runtime.Caller(1)
     Config.RootDir = path.Dir(filename)
+
+    // change view engine
+    theme := "blue"
+    viewDir := path.Join(Config.RootDir, Config.ViewPath)
+    layout := "layout"
+    extName := ".html"
+    useCache := !Config.Debug
+    Config.ViewEnginer = CreateThemeViewEngine(theme, viewDir, layout, extName, useCache)
 }

@@ -1,4 +1,4 @@
-package gokudemo
+package custom_viewengine
 
 import (
     "github.com/QLeelulu/goku"
